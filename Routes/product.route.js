@@ -10,7 +10,7 @@ const authMiddlware = async (req, res, next) => {
   const token = req.headers.token;
 
   try {
-    var decoded = jwt.verify(token, "SECRETPRIYA123");
+    var decoded = jwt.verify(token, process.env.SECRET_KEY);
     if (decoded.role === "admin") {
       next();
     }

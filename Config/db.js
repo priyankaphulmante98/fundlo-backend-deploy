@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
+require('dotenv').config()
 
 mongoose.set({strictQuery: false})
 
-mongoose.connect(`mongodb://0.0.0.0:27017/fundlo`).then(() => 
+mongoose.connect(process.env.MONGO_URL).then(() => 
 console.log('db.connected')).catch((err) => console.log(err))
