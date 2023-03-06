@@ -11,6 +11,8 @@ app.use(express.json())
 app.use(cors())
 app.use('/auth',user_route) 
 app.use('/product', product_route)
-
+app.get('/', (req, res) => {
+    res.send("hello")
+})
 
 app.listen(process.env.PORT,()=> {console.log('server started at port 8080')})
