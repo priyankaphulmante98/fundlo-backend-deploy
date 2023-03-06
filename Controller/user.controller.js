@@ -64,16 +64,7 @@ exports.loginUsers = async (req, res) => {
 
     const validateuser = await user.findOne({ email });
      
-    //admin functionallity
-    // if(validateuser.email==="admin@gmail.com"){
-    //   const check = await comparePassword(password, validateuser.password);
-    //   if(check){
-    //     return res.send({message:" logged in",role:"admin"})
-    //   }else{
-    //     return res.status(404).send({message:"wrong credentials"})
-    //   }
-
-    // }
+   
 
     if (validateuser) {
       const check = await comparePassword(password, validateuser.password);

@@ -27,12 +27,12 @@ const authMiddlware = async (req, res, next) => {
 
 router.get("/", Controller.getProduct);
 
-router.post("/", authMiddlware, Controller.postProduct);
+router.post("/", Controller.postProduct);
 
 router.get("/:id", Controller.singleProdcuct);
 
-router.patch("/:id", authMiddlware, Controller.updateProduct);
+router.patch("/:id", Controller.updateProduct);
 
-router.delete("/:id", authMiddlware, Controller.deleteProduct);
+router.delete("/:id",  Controller.deleteProduct);
 
 module.exports = router;
