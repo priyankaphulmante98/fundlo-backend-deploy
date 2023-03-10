@@ -10,7 +10,7 @@ const authMiddlware = async (req, res, next) => {
   const token = req.headers.token;
 
   try {
-    var decoded = jwt.verify(token, process.env.SECRET_KEY);
+    var decoded = jwt.verify(token, "SECRETPRIYA123");
     if (decoded.role === "admin") {
       next();
     }
@@ -33,6 +33,6 @@ router.get("/:id", Controller.singleProdcuct);
 
 router.patch("/:id", Controller.updateProduct);
 
-router.delete("/:id",  Controller.deleteProduct);
+router.delete("/:id", Controller.deleteProduct);
 
 module.exports = router;

@@ -14,6 +14,7 @@ exports.getProduct = async (req, res) => {
 //add the product
 exports.postProduct = async (req, res) => {
   try {
+   console.log(req.body)
     const product_data = await product_model.create(req.body);
     res.status(200).json(product_data);
   } catch (error) {
