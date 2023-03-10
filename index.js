@@ -15,5 +15,8 @@ app.use('/auth',user_route)
 app.use('/product', product_route) 
 app.use('/cart', cart_route)
 
+app.get("/",async(req,res)=>{
+    return res.send("hello")
+})
 
 app.listen(process.env.PORT||8080,()=> {console.log('server started at port 8080')}) 
